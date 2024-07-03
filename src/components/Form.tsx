@@ -35,6 +35,7 @@ const Form = () => {
         setFormData(updatedFormData);
         if (pwdVisibility) {
             changePasswordVisibility();
+            
         }
     };
 
