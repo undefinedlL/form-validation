@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,20 +15,36 @@
     @apply py-2 flex flex-col  bg-inherit mb-1;
   }
   .label {
-    @apply text-[15px];
+    @apply poppins text-[19px] 
   }
   .button {
-    @apply py-[7px] px-[20px] rounded-full bg-teal-800 text-black
+    @apply py-[7px] px-[20px] rounded-full bg-teal-800 text-white
   }
   .input {
-    @apply w-[350px] rounded-lg bg-inherit border-white border p-[5px] text-[20px]
+    @apply poppins w-[350px] rounded-lg bg-teal-900 border-white border p-[7px] text-[21px] outline-none
   }
+  .input-pwd {
+    @apply border-none w-[315px]  
+  }
+  
+  .input-error {
+    @apply border-red-800 border
+  }
+  .pwd-field {
+    @apply border-white border rounded-lg w-[350px] bg-teal-900
+  }
+  .pwd-field-error {
+    @apply border-red-800 border
+  }
+
+  
+
   .icon {
-    @apply inline-block ml-2
+    @apply inline-block ml-1  w-4
   }
 
   .error {
-    @apply text-red-800 text-[14px] max-w-[350px] max-h-3
+    @apply text-red-800 text-[14px] max-w-[350px] max-h-3 
   }
 }
 
@@ -28,10 +52,17 @@
   width: 100dvw;
   height: 100dvh;
 
+  padding-top: 7rem;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 
   background-color: #111;
+
+}
+
+.poppins {
+  font-family: 'Poppins', sans-serif;
 }

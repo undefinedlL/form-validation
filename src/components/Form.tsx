@@ -60,11 +60,11 @@ const Form = () => {
         setSuccess(false);
         clearForm();
     };
-
+ 
     return (
         <>
             {success && (
-                <div className="w-full h-full absolute bg-zinc-900 bg-opacity-50 flex justify-center items-center flex-col text-white">
+                <div className="poppins w-full h-full absolute top-0 left-0 z-30 bg-zinc-900 bg-opacity-50 flex justify-center items-center flex-col text-white">
                     <div className=" bg-zinc-800 p-[40px] rounded-2xl">
                         <h1 className="text-[28px]">
                             Form is successfully submitted!
@@ -75,11 +75,11 @@ const Form = () => {
                     </div>
                 </div>
             )}
-            <form className="text-white" onSubmit={onSubmitHandler}>
+            <form className="text-white poppins" onSubmit={onSubmitHandler}>
                 <div className="field">
                     <label className="label">Username:</label>
                     <input
-                        className="input"
+                        className={`input ${errors.username && 'input-error'}`}
                         type="text"
                         name="username"
                         value={formData.username}
@@ -90,7 +90,7 @@ const Form = () => {
                 <div className="field">
                     <label className="label">Email:</label>
                     <input
-                        className="input"
+                        className={`input ${(!errors.email.isNotEmpty || errors.email.isInvalid) && 'input-error'}`}
                         type="text"
                         name="email"
                         value={formData.email}
@@ -101,9 +101,9 @@ const Form = () => {
                 </div>
                 <div className="field">
                     <label className="label">Password:</label>
-                    <div>
+                    <div className={`pwd-field ${errors.password && 'pwd-field-error'}`}>
                         <input
-                            className="input"
+                            className="input input-pwd" 
                             type={pwdVisibility ? "text" : "password"}
                             name="password"
                             value={formData.password}
@@ -122,7 +122,7 @@ const Form = () => {
                         </button>
                     </div>
                     {errors.password && (
-                        <span className="error">
+                        <span className="error mb-6">
                             Password must be at least 8 characters long
                             including big and small letters, special symbols and numbers
                         </span>
