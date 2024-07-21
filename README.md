@@ -1,1 +1,1 @@
-# Form Validation with React, TypeScript, Tailwind
+# Form Validation with ReactJS + TypeScript
