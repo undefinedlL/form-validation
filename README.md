@@ -1,1 +1,1 @@
-# Form Validation with ReactJS + TypeScript
+# Form Validation with React + TypeScript
